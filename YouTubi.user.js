@@ -1526,7 +1526,8 @@ option{background:#111d2b;color:#cce8f4}
 			}
 			countElement.textContent = dislikeText;
 			container.title = dislikeText;
-			container.querySelector('.yt-spec-button-shape-next__icon').style.marginRight = '3px';
+			const iconEl = container.querySelector('.ytSpecButtonShapeNextIcon');
+if (iconEl) iconEl.style.marginRight = '3px';
 		}
 		function FormatDislikeCount(count) {
 			return Intl.NumberFormat(userLanguage, {
@@ -2262,9 +2263,9 @@ option{background:#111d2b;color:#cce8f4}
 		const SPAN_ID = 'YouTubi-absolute-likes';
 		// hide YouTube's own shortened like count
 		pushCSS(
-			'#actions like-button-view-model button .yt-spec-button-shape-next__button-text-content { display: none !important }',
-			'YouTubi-abs-likes-style'
-		);
+    '#actions like-button-view-model button .ytSpecButtonShapeNextButtonTextContent { display: none !important }',
+    'YouTubi-abs-likes-style'
+);
 		// Same structure as ReturnDislikes: runOnPageInitOrTransition + waitSelector
 		// waitSelector handles the case when tab becomes active (button already in DOM)
 		runOnPageInitOrTransition(async () => {
@@ -2314,7 +2315,8 @@ option{background:#111d2b;color:#cce8f4}
 				span.textContent = fmt;
 			}
 			btn.title = fmt;
-			btn.querySelector('.yt-spec-button-shape-next__icon')?.style.setProperty('margin-right', '3px');
+			const iconEl2 = btn.querySelector('.ytSpecButtonShapeNextIcon');
+if (iconEl2) iconEl2.style.marginRight = '3px';
 		}
 	}
 
